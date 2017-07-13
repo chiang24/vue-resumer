@@ -42,7 +42,7 @@
     <ol class="panes">
         <li v-for="i in [0,1,2,3,4,5]" v-bind:class="{active: currentTab === i}" >
         Tab {{i+1}}
-      </li>
+        </li>
         <!-- <li v-bind:class="{active:currentTab === 0}">Tab1</li>
         <li v-bind:class="{active:currentTab === 1}">Tab2</li>
         <li v-bind:class="{active:currentTab === 2}">Tab3</li>
@@ -63,7 +63,6 @@ export default {
   }
 }
 </script>
->
 
 <style lang="scss">
 #editor{

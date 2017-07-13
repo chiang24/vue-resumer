@@ -1,0 +1,19 @@
+{
+  "name": "vue-resumer",
+  "version": "0.1.0",
+  "description": "Vue在线简历生成器",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiang24/vue-resumer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/chiang24/vue-resumer/issues"
+  },
+  "homepage": "https://github.com/chiang24/vue-resumer#readme"
+}

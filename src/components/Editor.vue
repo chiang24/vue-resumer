@@ -6,6 +6,7 @@
 #editorText{
 color:green;
 border:1px solid green;
+min-height: 100px;
 }
 </style>
 

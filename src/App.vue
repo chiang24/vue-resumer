@@ -47,7 +47,7 @@ html,body,#app{
 main{
   display: flex;
   flex: 1;
-  background: #DDD;
+  background: #F0F0F0;
    > .editor{
     width: 40em;
     margin: 16px 8px 16px 16px;

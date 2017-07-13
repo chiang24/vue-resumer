@@ -1,12 +1,20 @@
 <template>
-<div id="topbarText">这是Topbar</div>
+<div id="topbarText">
+    <h1 class="title">Resumer</h1>
+</div>
 </template>
 
-<style>
+<style lang="scss">
 #topbarText{
-color:blue;
-border:1px solid blue;
-min-height: 100px;
+color:white;
+min-height: 80px;
+display: flex;
+align-items: center;
+padding-left: 104px;
+padding-right: 104px;
+> .title{
+
+}
 }
 </style>
 

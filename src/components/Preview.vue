@@ -1,11 +1,10 @@
 <template>
-<div id="previewText">这是Preview</div>
+<div id="previewText"></div>
 </template>
 
 <style>
 #previewText{
 color:red;
-border:1px solid red;
 min-height: 100px;
 }
 </style>

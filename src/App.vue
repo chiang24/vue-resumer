@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <Topbar />
-    <Editor />
-    <Preview />
+    <Topbar class="topbar"/>
+    <main>
+    <Editor class="editor"/>
+    <Preview class="preview"/>
+    </main>
   </div>
 </template>
 
@@ -19,13 +21,43 @@
 }
 </script>
 
-<style>
+<style lang="scss">
+html,body,#app{
+  height: 100%;     /* 需要给它以及body、html都要100%,等价于100vh */
+  overflow: hidden;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
 }
+.topbar{
+  position: relative;
+  background-color: #407FE3;
+  box-shadow: 0 0 3px hsla(0,0,0,0.5);
+}
+main{
+  display: flex;
+  flex: 1;
+  background: #DDD;
+   > .editor{
+    width: 40em;
+    margin: 16px 8px 16px 16px;
+    background: #192229;
+    box-shadow: 0 0 3px hsla(0,0,0,0.5);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  > .preview{
+    flex: 1;
+    margin: 16px 16px 16px 8px;
+    background: white;
+    box-shadow: 0 0 3px hsla(0,0,0,0.5);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+}
+
 </style>

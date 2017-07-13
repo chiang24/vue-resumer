@@ -1,9 +1,9 @@
 <template>
-<div id="previewText"></div>
+<div id="preview"></div>
 </template>
 
 <style>
-#previewText{
+#preview{
 color:red;
 min-height: 100px;
 }

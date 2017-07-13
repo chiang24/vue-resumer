@@ -1,11 +1,11 @@
 <template>
-<div id="editorText">
+<div id="editor">
     <nav>
         <ol>
             <li v-for="i in [0,1,2,3,4,5]" v-bind:class="{active:currentTab === i}" v-on:click="currentTab = i">
             <svg class="icon">
             <use v-bind:xlink:href="`#icon-${icons[i]}`"></use>
-          </svg>
+            </svg>
             </li>
             <!-- <li v-bind:class="{active:currentTab === 0}" v-on:click="currentTab = 0">
                 <svg class="icon" aria-hidden="true">
@@ -53,7 +53,7 @@
 </div>
 </template>
 
-<<script>
+<script>
 export default {
   data(){
       return {
@@ -66,7 +66,7 @@ export default {
 >
 
 <style lang="scss">
-#editorText{
+#editor{
 color:green;
 min-height: 100px;
 display: flex;
@@ -86,7 +86,7 @@ background: white;
      &.active{
      background: white;
      > .icon{
-         fill: black;
+         fill: #192229;
      }
  }
  }

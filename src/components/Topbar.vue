@@ -1,5 +1,5 @@
 <template>
-<div id="topbarText">
+<div id="topbar">
     <h1 class="title">Resumer</h1>
     <div>
     <el-button type="primary">注册</el-button>
@@ -10,7 +10,7 @@
 </template>
 
 <style lang="scss">
-#topbarText{
+#topbar{
 color:white;
 min-height: 80px;
 display: flex;

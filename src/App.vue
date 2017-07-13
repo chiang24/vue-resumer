@@ -1,17 +1,21 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <hello></hello>
+    <Topbar></Topbar>
+    <Editor />
+    <Preview />
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
 
-export default {
-  name: 'app',
+  import Topbar from './components/Topbar'
+  import Editor from './components/Editor'
+  import Preview from './components/Preview'
+
+  export default {
   components: {
-    Hello
+   Topbar,Editor,Preview
   }
 }
 </script>

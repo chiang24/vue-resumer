@@ -44,43 +44,10 @@
                     Tab {{i+1}}
                     </li> -->
             <li v-bind:class="{active:currentTab === 0}">
-                <h2>个人信息</h2>
-                <el-form class="profileInput">
-                    <el-form-item label="姓名">
-                        <el-input v-model="profile.name" placeholder="姓名"></el-input>
-                    </el-form-item>
-                    <el-form-item label="所在城市">
-                        <el-input v-model="profile.city" placeholder="所在城市"></el-input>
-                    </el-form-item>
-                    <el-form-item label="出生年月">
-                        <el-input v-model="profile.birth" placeholder="出生年月"></el-input>
-                    </el-form-item>
-                    <el-form-item label="申请岗位">
-                        <el-input v-model="profile.job" placeholder="申请岗位"></el-input>
-                    </el-form-item>
-                    <el-form-item label="自我介绍" prop="desc">
-                        <el-input type="textarea" :autosize="{ minRows: 3, maxRows: 6}" placeholder="自我介绍" v-model="profile.introduction"></el-input>
-                    </el-form-item>
-                </el-form>
+               <ProfileEditor v-bind:profile="profile"/>
             </li>
             <li v-bind:class="{active:currentTab === 1}">
-                <h2>工作经历</h2>
-                <el-form class="workInput">
-                    <div v-for="(work,index) in workHistory" class="workBlock">
-                        <i class="el-icon-circle-cross" v-on:click="removeWorkHistory(index)"></i>
-                        <el-form-item label="公司名称">
-                            <el-input v-model="work.company" placeholder="公司名称"></el-input>
-                        </el-form-item>
-                        <el-form-item label="职位">
-                            <el-input v-model="work.post" placeholder="职位"></el-input>
-                        </el-form-item>
-                        <el-form-item label="工作内容" prop="desc">
-                            <el-input type="textarea" :autosize="{ minRows: 3, maxRows: 6}" placeholder="工作内容" v-model="work.content">
-                            </el-input>
-                        </el-form-item>
-                    </div>
-                    <el-button class="btn" type="text"  v-on:click="addWorkHistory">+ 添加更多</el-button>
-                </el-form>
+                <WorkHistory v-bind:WorkHistory="WorkHistory"/>
             </li>
             <li v-bind:class="{active:currentTab === 2}">
                 <h2>学习经历</h2>
@@ -99,7 +66,10 @@
 </template>
 
 <script>
+import ProfileEditor from './ProfileEditor.vue'
+import WorkHistory from './WorkHistory'
 export default {
+    components:{ProfileEditor,WorkHistory},
     data() {
         return {
             currentTab: 0,
@@ -111,7 +81,7 @@ export default {
                 job: '',
                 introduction: ''
             },
-            workHistory: [
+            WorkHistory: [
                 {
                     company: '',
                     content: '',
@@ -121,17 +91,6 @@ export default {
         }
     },
     methods: {
-        addWorkHistory() {
-            this.workHistory.push(
-                {
-                    company: '',
-                    content: '',
-                    post: ''
-                })
-        },
-        removeWorkHistory(index) {
-            this.workHistory.splice(index, 1)
-        }
     },
     created() {
     }
@@ -172,17 +131,17 @@ export default {
             &.active {
                 display: block;
             }
-            >h2 {
+            >div h2 {
                 color: #192229;
                 padding-top: 20px;
                 padding-left: 32px;
                 box-sizing: border-box;
             }
-            >.profileInput {
+            >div .profileInput {
                 width: 415px;
                 padding: 12px 32px 32px 32px;
             }
-            >.workInput {
+            >div .workInput {
                 width: 390px;
                 padding: 20px 32px 32px 32px;
                 position: relative;

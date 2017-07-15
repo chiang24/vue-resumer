@@ -10,7 +10,7 @@
                 <el-form-item label="专业">
                     <el-input v-model="study.profession" placeholder="专业"></el-input>
                 </el-form-item>
-                <el-form-item label="学历"  label-width="80px">
+                <el-form-item label="学历" :inline="true" label-width="80px">
                     <el-select v-model="study.education" placeholder="学历">
                         <el-option label="大专" value="zhuanke"></el-option>
                         <el-option label="本科" value="Undergraduate"></el-option>
@@ -53,8 +53,7 @@ export default {
                     return time.getTime() < Date.now() - 8.64e7;
                 }
             },
-            labelPosition:'top',
-            // labelWidth:'150px'
+            labelPosition:'top'
         }
     }
 }

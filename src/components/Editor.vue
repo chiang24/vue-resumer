@@ -53,13 +53,13 @@
                 <StudyHistory v-bind:StudyHistory="StudyHistory"/>
             </li>
             <li v-bind:class="{active:currentTab === 3}">
-                <h2>项目经历</h2>
+                <ProjectsHistory v-bind:ProjectsHistory="ProjectsHistory"/>
             </li>
             <li v-bind:class="{active:currentTab === 4}">
-                <h2>获奖情况</h2>
+                <HonorsHistory v-bind:HonorsHistory="HonorsHistory"/>
             </li>
             <li v-bind:class="{active:currentTab === 5}">
-                <h2>联系方式</h2>
+                <ContactInformation v-bind:ContactInformation="ContactInformation"/>
             </li>
         </ol>
     </div>
@@ -69,8 +69,11 @@
 import ProfileEditor from './ProfileEditor.vue'
 import WorkHistory from './WorkHistory.vue'
 import StudyHistory from './StudyHistory.vue'
+import ProjectsHistory from './ProjectsHistory.vue'
+import HonorsHistory from './HonorsHistory.vue'
+import ContactInformation from './ContactInformation.vue'
 export default {
-    components:{ProfileEditor,WorkHistory,StudyHistory},
+    components:{ProfileEditor,WorkHistory,StudyHistory,ProjectsHistory,HonorsHistory,ContactInformation},
     data() {
         return {
             currentTab: 0,
@@ -97,6 +100,27 @@ export default {
                     graduation:''   
                 }
                 
+            ],
+            ProjectsHistory:[
+                {
+                    projectName: '',
+                    responsibilities: '',
+                    useTime: '',
+                    projectIntroduction: ''
+                }
+            ],
+            HonorsHistory:[
+                {
+                    awards:'',
+                    honorDate:''
+                }
+            ],
+            ContactInformation:[
+                {
+                    phone:'',
+                    email:'',
+                    blog:''
+                }
             ]
         }
     },
@@ -198,6 +222,58 @@ export default {
                        left: 50%;
                        margin-left: -34px;
                     }
+            }
+             >div .projectsInput {
+                width: 390px;
+                padding: 20px 32px 32px 32px;
+                position: relative;
+                >div {
+                    margin-bottom: 20px;
+                    box-shadow: 0 0 3px hsla(0, 0, 0, 0.3);
+                    padding: 30px 16px;
+                    position: relative;
+                    >.el-icon-circle-cross {
+                    position: absolute;
+                    right: 16px;
+                    top: 16px;
+                    z-index: 10;
+                    }
+                }
+                > .btn{
+                      position: absolute;
+                       right: 32px;
+                       bottom:7px;
+                       left: 50%;
+                       margin-left: -34px;
+                    }
+            }
+             >div .honorsInput {
+                width: 390px;
+                padding: 20px 32px 32px 32px;
+                position: relative;
+                >div {
+                    margin-bottom: 20px;
+                    box-shadow: 0 0 3px hsla(0, 0, 0, 0.3);
+                    padding: 30px 16px;
+                    position: relative;
+                    >.el-icon-circle-cross {
+                    position: absolute;
+                    right: 16px;
+                    top: 16px;
+                    z-index: 10;
+                    }
+                }
+                > .btn{
+                      position: absolute;
+                       right: 32px;
+                       bottom:7px;
+                       left: 50%;
+                       margin-left: -34px;
+                    }
+            }
+                >div .ContactInformationInput {
+                width: 415px;
+                padding: 12px 32px 32px 32px;
             }
         }
     }

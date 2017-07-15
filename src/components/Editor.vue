@@ -50,7 +50,7 @@
                 <WorkHistory v-bind:WorkHistory="WorkHistory"/>
             </li>
             <li v-bind:class="{active:currentTab === 2}">
-                <h2>学习经历</h2>
+                <StudyHistory v-bind:StudyHistory="StudyHistory"/>
             </li>
             <li v-bind:class="{active:currentTab === 3}">
                 <h2>项目经历</h2>
@@ -67,9 +67,10 @@
 
 <script>
 import ProfileEditor from './ProfileEditor.vue'
-import WorkHistory from './WorkHistory'
+import WorkHistory from './WorkHistory.vue'
+import StudyHistory from './StudyHistory.vue'
 export default {
-    components:{ProfileEditor,WorkHistory},
+    components:{ProfileEditor,WorkHistory,StudyHistory},
     data() {
         return {
             currentTab: 0,
@@ -87,6 +88,15 @@ export default {
                     content: '',
                     post: ''
                 }
+            ],
+            StudyHistory:[
+                {
+                    school:'',
+                    profession:'',
+                    education:['大专','本科','硕士','博士','其它'],
+                    graduation:''   
+                }
+                
             ]
         }
     },
@@ -149,6 +159,30 @@ export default {
                     margin-bottom: 20px;
                     box-shadow: 0 0 3px hsla(0, 0, 0, 0.3);
                     padding: 16px 16px;
+                    position: relative;
+                    >.el-icon-circle-cross {
+                    position: absolute;
+                    right: 16px;
+                    top: 16px;
+                    z-index: 10;
+                    }
+                }
+                > .btn{
+                      position: absolute;
+                       right: 32px;
+                       bottom:7px;
+                       left: 50%;
+                       margin-left: -34px;
+                    }
+            }
+            >div .studyInput {
+                width: 390px;
+                padding: 20px 32px 32px 32px;
+                position: relative;
+                >div {
+                    margin-bottom: 20px;
+                    box-shadow: 0 0 3px hsla(0, 0, 0, 0.3);
+                    padding: 30px 16px;
                     position: relative;
                     >.el-icon-circle-cross {
                     position: absolute;

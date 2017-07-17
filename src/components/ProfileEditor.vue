@@ -8,14 +8,14 @@
         <el-form-item label="所在城市">
             <el-input v-model="profile.city" placeholder="所在城市"></el-input>
         </el-form-item>
-        <el-form-item label="出生年月">
-            <el-input v-model="profile.birth" placeholder="出生年月"></el-input>
+        <el-form-item label="出生日期">
+            <el-input v-model="profile.birth" placeholder="格式:19960101"></el-input>
         </el-form-item>
         <el-form-item label="申请岗位">
-            <el-input v-model="profile.job" placeholder="申请岗位"></el-input>
+            <el-input v-model="profile.job" placeholder="目标岗位"></el-input>
         </el-form-item>
         <el-form-item label="自我介绍" prop="desc">
-            <el-input type="textarea" :autosize="{ minRows: 3, maxRows: 6}" placeholder="自我介绍" v-model="profile.introduction"></el-input>
+            <el-input type="textarea" :autosize="{ minRows: 3, maxRows: 6}" placeholder="用几句话介绍一下自己吧！" v-model="profile.introduction"></el-input>
         </el-form-item>
     </el-form>
 </div>

@@ -44,22 +44,22 @@
                     Tab {{i+1}}
                     </li> -->
             <li v-bind:class="{active:currentTab === 0}">
-               <ProfileEditor v-bind:profile="profile"/>
+               <ProfileEditor v-bind:profile="resume.profile"/>
             </li>
             <li v-bind:class="{active:currentTab === 1}">
-                <WorkHistory v-bind:WorkHistory="WorkHistory"/>
+                <WorkHistory v-bind:WorkHistory="resume.WorkHistory"/>
             </li>
             <li v-bind:class="{active:currentTab === 2}">
-                <StudyHistory v-bind:StudyHistory="StudyHistory"/>
+                <StudyHistory v-bind:StudyHistory="resume.StudyHistory"/>
             </li>
             <li v-bind:class="{active:currentTab === 3}">
-                <ProjectsHistory v-bind:ProjectsHistory="ProjectsHistory"/>
+                <ProjectsHistory v-bind:ProjectsHistory="resume.ProjectsHistory"/>
             </li>
             <li v-bind:class="{active:currentTab === 4}">
-                <HonorsHistory v-bind:HonorsHistory="HonorsHistory"/>
+                <HonorsHistory v-bind:HonorsHistory="resume.HonorsHistory"/>
             </li>
             <li v-bind:class="{active:currentTab === 5}">
-                <ContactInformation v-bind:ContactInformation="ContactInformation"/>
+                <ContactInformation v-bind:ContactInformation="resume.ContactInformation"/>
             </li>
         </ol>
     </div>
@@ -74,61 +74,19 @@ import HonorsHistory from './HonorsHistory.vue'
 import ContactInformation from './ContactInformation.vue'
 export default {
     components:{ProfileEditor,WorkHistory,StudyHistory,ProjectsHistory,HonorsHistory,ContactInformation},
+    props:['resume'],
     data() {
         return {
             currentTab: 0,
             icons: ['shenfenzheng', 'work', 'book', 'xiangmu', 'jiangbei', 'phone'],
-            profile: {
-                name: '',
-                city: '',
-                birth: '',
-                job: '',
-                introduction: ''
+            methods: {
             },
-            WorkHistory: [
-                {
-                    company: '',
-                    content: '',
-                    post: ''
-                }
-            ],
-            StudyHistory:[
-                {
-                    school:'',
-                    profession:'',
-                    education:['大专','本科','硕士','博士','其它'],
-                    graduation:''   
-                }
-                
-            ],
-            ProjectsHistory:[
-                {
-                    projectName: '',
-                    responsibilities: '',
-                    useTime: '',
-                    projectIntroduction: ''
-                }
-            ],
-            HonorsHistory:[
-                {
-                    awards:'',
-                    honorDate:''
-                }
-            ],
-            ContactInformation:[
-                {
-                    phone:'',
-                    email:'',
-                    blog:''
-                }
-            ]
-        }
-    },
-    methods: {
-    },
-    created() {
+            created() {
     }
 }
+}
+}
+
 </script>
 
 <style lang="scss">

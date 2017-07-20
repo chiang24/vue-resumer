@@ -2,7 +2,7 @@
     <div id="editor">
         <nav>
             <ol>
-                <li v-for="i in [0,1,2,3,4,5]" v-bind:class="{active:currentTab === i}" v-on:click="currentTab = i">
+                <li v-for="i in [0,1,2,3,4,5]" v-bind:class="{active:currentTab === i}" v-on:click="currentTab = i" v-bind:key="i">
                     <svg class="icon">
                         <use v-bind:xlink:href="`#icon-${icons[i]}`"></use>
                     </svg>

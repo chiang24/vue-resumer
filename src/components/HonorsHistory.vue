@@ -2,7 +2,7 @@
     <div>
         <h2>获奖经历</h2>
         <el-form class="honorsInput" :label-position="labelPosition">
-            <div v-for="(honor,index) in HonorsHistory" class="HonorBlock">
+            <div v-for="(honor,index) in HonorsHistory" class="HonorBlock" v-bind:key="(honor,index)">
                 <i class="el-icon-circle-cross" v-on:click="removeHonorHistory(index)"></i>
                 <el-form-item label="奖项">
                     <el-input v-model="honor.awards" placeholder="奖项"></el-input>
@@ -40,7 +40,6 @@ export default {
                 }
             },
             labelPosition:'top',
-            // labelWidth:'150px'
         }
     }
 }

@@ -1,10 +1,14 @@
 <template>
-  <div id="app">
-    <Topbar class="topbar"/>
+  <div id="app" v-bind:class="{previewMode:previewMode}">
+      <div class="dialogWrapper">
+          <Topbar class="topbar"  v-on:preview="preview"/>
     <main>
-    <Editor class="editor"/>
-    <Preview class="preview"/>
+    <Editor v-bind:resume="resume" class="editor"/>
+    <Preview v-bind:resume="resume" class="preview"/>
     </main>
+      </div>
+    
+    <el-button id="exitPreview"type="primary" v-on:click="exitPreview">退出预览</el-button>
   </div>
 </template>
 
@@ -15,9 +19,69 @@
   import Preview from './components/Preview'
 
   export default {
+    data(){
+      return{
+        previewMode:false,
+        resume:{
+            profile: {
+                name: '',
+                city: '',
+                birth: '',
+                job: '',
+                introduction: ''
+            },
+            WorkHistory: [
+                {
+                    company: '',
+                    content: '',
+                    post: ''
+                }
+            ],
+            StudyHistory:[
+                {
+                    school:'',
+                    profession:'',
+                    education:['大专','本科','硕士','博士','其它'],
+                    graduation:''   
+                }
+                
+            ],
+            ProjectsHistory:[
+                {
+                    projectName: '',
+                    responsibilities: '',
+                    useTime: '',
+                    projectIntroduction: ''
+                }
+            ],
+            HonorsHistory:[
+                {
+                    awards:'',
+                    honorDate:''
+                }
+            ],
+            ContactInformation:
+                {
+                    phone:'',
+                    email:'',
+                    blog:''
+                }
+            
+        }
+      }
+    },
+
   components: {
    Topbar,Editor,Preview
-  }
+  },
+    methods:{
+        preview(){
+            this.previewMode = true
+        },
+        exitPreview(){
+            this.previewMode = false
+        }
+    }
 }
 </script>
 
@@ -44,7 +108,12 @@ html,body,#app{
        fill: currentColor;
        overflow: hidden;
 }
-main{
+.dialogWrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #EAEBEC;
+> main{
   display: flex;
   flex: 1;
   background: #F0F0F0;
@@ -62,8 +131,28 @@ main{
     background: white;
     box-shadow: 0 0 3px hsla(0,0,0,0.5);
     border-radius: 4px;
-    overflow: hidden;
+    overflow: auto;
   }
 }
+}
 
+.previewMode  #topbar{
+  display: none;
+}
+.previewMode #editor{
+  display: none;
+}
+.previewMode #preview{
+  max-width: 800px;
+  margin: 32px auto;
+}
+#exitPreview{
+  display: none;
+}
+.previewMode #exitPreview{
+  display: inline-block;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+}
 </style>

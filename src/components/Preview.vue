@@ -31,7 +31,7 @@
                 <li v-for="projectItem in filter(resume.ProjectsHistory)" v-bind:key="projectItem">
                     <h3>{{projectItem.projectName }}</h3>
                     <p>{{projectItem.responsibilities}}</p>
-                    <p>{{projectItem.useTime | formatDate}}</p>
+                    <p>{{projectItem.beginTime | formatDate}}-{{projectItem.endTime | formatDate}}</p>
                     <p>{{projectItem.projectIntroduction}}</p>
                 </li>
             </ul>
@@ -100,7 +100,6 @@ export default {
         padding: 15px;
         width: 88px;
         font-weight: normal;
-        border-radius: 4px;
     }
     >.contact {
         padding: 32px 0; // border: 1px solid red;

@@ -50,7 +50,7 @@
             <div>
                 <p>电话：{{resume.ContactInformation.phone || '13221326360'}}</p>
                 <p>邮箱：{{resume.ContactInformation.email || '438085855@qq.com'}}</p>
-                <p>个人主页：{{resume.ContactInformation.blog || 'www.githubchiang24.com'}}</p>
+                <p>个人主页：{{resume.ContactInformation.blog || 'https://github.com/chiang24'}}</p>
             </div>
         </section>
     </div>
